@@ -4,11 +4,15 @@
   "author": "Juho Vepsalainen <bebraw@gmail.com>",
   "version": "0.3.0",
   "dependencies": {
-    "funkit": "== 0.7.4",
-    "is-js": "== 0.1.1",
-    "async": "== 0.2.6"
+    "funkit": "0.7.7",
+    "is-js": "0.1.1",
+    "async": "0.2.9",
+    "require-dir": "0.1.0"
   },
-  "main": "./lib/spec.js",
+  "main": "./lib",
+  "scripts": {
+    "test": "node ./test.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://bebraw@github.com/bebraw/sugar-spec"
