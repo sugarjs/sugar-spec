@@ -54,6 +54,9 @@ function main() {
         },
         connect: function(address, cb) {
             cb();
+        },
+        disconnect: function(cb) {
+            cb();
         }
     };
     var assert = {
