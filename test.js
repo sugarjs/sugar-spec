@@ -19,7 +19,9 @@ function main() {
         ref: noop,
         refs: noop,
         get: function(model, id, fields, cb) {
-            if(is.fn(fields)) return fields();
+            if(is.fn(fields)) {
+                return fields();
+            }
 
             cb();
         },
@@ -30,7 +32,9 @@ function main() {
             cb();
         },
         getAll: function(model, fields, cb) {
-            if(is.fn(fields)) return fields();
+            if(is.fn(fields)) {
+                return fields();
+            }
 
             cb();
         },
