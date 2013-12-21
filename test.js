@@ -59,10 +59,10 @@ function main() {
             cb();
         }
     };
-    var assert = {
-        equal: function() {},
-        ok: function() {}
-    };
+    var assert = noop;
+
+    assert.equal = noop;
+    assert.ok = noop;
 
     tests({
         sugar: sugar,
