@@ -20,32 +20,40 @@ function main() {
         refs: noop,
         get: function(model, id, fields, cb) {
             if(is.fn(fields)) {
-                return fields();
+                return fields(null, {_id: 'foobar'});
             }
 
-            cb();
+            cb(null, {name: 'foo'});
         },
         getOne: function(model, fields, cb) {
-            cb();
+            cb(null, {name: 'foo'});
         },
         getOrCreate: function(model, fields, cb) {
-            cb();
+            cb(null, {name: 'bar', _id: 'foo'});
         },
         getAll: function(model, fields, cb) {
             if(is.fn(fields)) {
-                return fields();
+                return fields(null, [{name: 'baz'}, {name: 'bar'}]);
             }
 
-            cb();
+            cb(null, [{name: 'foo'}, {name: 'baz'}]);
         },
         create: function(model, data, cb) {
-            cb();
+            if(is.array(data)) {
+                return cb(null, [{name: 'foo'}, {name: 'bar'}]);
+            }
+
+            return cb(null, {_id: 'foobar'});
         },
         update: function(model, id, data, cb) {
-            cb();
+            if(is.array(id)) {
+                return cb(null, [{name: 'baz'}, {name: 'barbar'}]);
+            }
+
+            cb(null, {name: 'foo'});
         },
         remove: function(model, id, cb) {
-            cb();
+            cb(null, [{}]);
         },
         removeAll: function(model, cb) {
             cb();
