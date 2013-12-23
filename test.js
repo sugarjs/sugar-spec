@@ -73,6 +73,7 @@ function main() {
     };
     var assert = noop;
 
+    assert.deepEqual = noop;
     assert.equal = noop;
     assert.ok = noop;
 
