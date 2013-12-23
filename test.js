@@ -9,9 +9,11 @@ main();
 function main() {
     var sugar = {
         schema: function() {
-            return function() {
+            return function(parent, name) {
                 return {
-                    fields: noop
+                    fields: function(fields) {
+                        parent[name] = fields;
+                    }
                 };
             };
         },
