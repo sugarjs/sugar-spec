@@ -39,11 +39,13 @@ function main() {
             cb(null, [{name: 'foo'}, {name: 'baz'}]);
         },
         create: function(model, data, cb) {
+            var now = new Date();
+
             if(is.array(data)) {
-                return cb(null, [{name: 'foo'}, {name: 'bar'}]);
+                return cb(null, [{name: 'foo', created: now}, {name: 'bar', created: now}]);
             }
 
-            return cb(null, {_id: 'foobar'});
+            return cb(null, {_id: 'foobar', created: now});
         },
         update: function(model, id, data, cb) {
             if(is.array(id)) {
