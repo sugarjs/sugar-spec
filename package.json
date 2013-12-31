@@ -2,7 +2,7 @@
   "name": "sugar-spec",
   "description": "Sugar database query layer specification",
   "author": "Juho Vepsalainen <bebraw@gmail.com>",
-  "version": "0.8.2",
+  "version": "0.8.3",
   "dependencies": {
     "funkit": "0.7.7",
     "async": "0.2.9",
