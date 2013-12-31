@@ -44,7 +44,8 @@ function init(sugar, engine) {
 
     schema(schemas, 'Author').fields({
         name: {type: String, required: true},
-        nick: {type: String, unique: true},
+        nick: String,
+        secret: {type: Number, unique: true},
         extra: mixed()
     });
 
