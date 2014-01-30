@@ -68,6 +68,16 @@ function init(sugar, engine) {
         role: String
     });
 
+    // nested definition
+    schema(schemas, 'Engine').fields({
+        name: {type: String, required: true},
+        features: {
+            'fast': Boolean,
+            'robust': Boolean,
+            'neat': Boolean
+        }
+    });
+
     return schemas;
 }
 module.exports = init;
